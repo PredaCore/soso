@@ -1,0 +1,14 @@
+{
+"name": "soso",
+"version":  "1.0.0",
+"description":  "",
+"main": "index.js",
+"scripts":  {
+   "test": "echo \"Error: no test specified\" && exit l"
+},
+   "author": "Pred",
+   "license": "ISC",
+   "dependencies": {
+      "discord.js": "^11.2.1"
+   }
+}
