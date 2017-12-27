@@ -7,7 +7,7 @@ bot.on("ready", function() {
     console.log("le bot a bien ete connecte");
 });
 
-    else if(message.content === '!richEmbed3') {
+    else if(message.content === '!test') {
       const embed = new Discord.RichEmbed();
       embed.setTitle('Mon titre - 256 caractères')
       .setAuthor('Nom', 'https://i.imgur.com/lm8s41J.png')
@@ -29,4 +29,4 @@ bot.on("ready", function() {
   }
 });
 
-bot.login("Mzk0NTQ4NjQ2MTI3MDc1MzI5.DSF7lA.gkcdZON9Ltyw9eNFHIZiqwf6pcI");
+bot.login("Mzk0NTQ4NjQ2MTI3MDc1MzI5.DSU33g.4pNyKqbzGPoNSs-joO8FxxGNI7A");
