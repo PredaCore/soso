@@ -3,9 +3,9 @@ const Discord = require("discord.js");
 var bot = new Discord.Client();
 
 var promoteGrade = function(a,b,c,d) {
-    client.guilds.members.find('id', a).removeRole("id", b);
-    client.guilds.members.find('id', a).addRole("id", c);
-    if(d) client.guilds.members.find("id", a).setVoiceChannel(d);
+    bot.guilds.members.find('id', a).removeRole("id", b);
+    bot.guilds.members.find('id', a).addRole("id", c);
+    if(d) bot.guilds.members.find("id", a).setVoiceChannel(d);
 };
 
 bot.on('ready', () => {
