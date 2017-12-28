@@ -8,9 +8,17 @@ var promoteGrade = function(a,b,c,d) {
     if(d) client.guilds.members.find("id", a).setVoiceChannel(d);
 };
 
-bot.on("ready", function() {
+bot.on('ready', () => {
     bot.user.setGame("Orc");
-    console.log("le bot a bien ete connecte");
+    console.log("self-bot: true...");
+    var a = bot.guilds.array();
+    for(var b=0,c=a.length;b<c;b++) {
+        console.log(a[b]);
+    }
+});
+
+bot.on('message', message => {
+    if(message.content==="!promoteGrade2") promoteGrade(message.author.id, "ID de Grade1", "ID de Grade2");
 });
 
 bot.login("Mzk0NTQ4NjQ2MTI3MDc1MzI5.DSU33g.4pNyKqbzGPoNSs-joO8FxxGNI7A");
