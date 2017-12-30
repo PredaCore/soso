@@ -32,6 +32,22 @@ const rpg = {
 };
 
 var allQuests = [];
+["0","Bienvenue dans le modèle de quêtes de YourQuest","Choisissez un couloir ci-dessous :",2,"Gauche","Droite"],
+        // C'est le début de l'aventure, l'abre 0. Deux choix suivront cet arbre 0 : 01 et 02.
+        
+        ["01",".<br/>Vous avez choisi d'aller à gauche. Il y a trois portes dans ce couloir","Choisissez une porte :",3,"Bleue","Verte","Rose"],
+        // C'est le choix numéro 1 suivant l'arbre 0, c'est à dire 01. Trois choix suivront l'arbre 01 : 011, 012 et 013.
+        ["02",".<br/>Vous avez choisi d'aller à droite. Il y a une porte dans ce couloir","Ouvrir la porte ?",1,"Ouvrir."],
+        // C'est le choix numéro 2 suivant l'arbre 0, c'est à dire 02. Un choix suivra l'arbre 02 : 021.
+        
+        
+        ["011",".<br/>Vous avez ouvert la porte Bleue. Vous découvrez un paysage de pique-nique.","Que faites-vous ?",4,"Regarder les fourmis","Se servir à manger","Renifler le fromage","Retourner sur vos pas"],
+        // C'est le choix numéro 1 suivant l'arbre 01, c'est à dire 011. Quatre choix suivront l'arbre 011 : 0111, 0112, 0113 et 0114.
+        ["012",".<br/>Vous avez ouvert la porte Verte. Un vilain troll vous attendait derrière","Allez vous survivre ? C'est une autre histoire...",0],
+        // C'est le choix numéro 2 suivant l'arbre 01, c'est à dire 012. Aucun choix n'est possible derrière cet arbre.
+        ["013",".<br/>Vous avez ouvert la porte Rose. Un vortex vous ramène dans le couloir de gauche","Entrer dans le vortex ?",1,"Entrer."],
+        // C'est le choix numéro 3 suivant l'arbre 01, c'est à dire 013. Un choix suivra l'arbre 013 : 0131.
+        
 
 var myQuest = ""; // utilisé pour l'histoire complète à insérer.
 var state = "000"; // numéro de l'arbre en cours de lecture
