@@ -24,16 +24,12 @@ Wicked.on('ready', () => {
 Wicked.on('message', message => {
     if(message.author.id===botID) setTimeout(function(){message.delete();}, 6e3);
     
-    var regexp = [
-        new RegExp('^<@([0-9]+)>,', 'i'),
-        new RegExp('^!', 'i')
-    ];
+var regexp = [/^<@([0-9]+)>,/, /^!/];
 
     if(regexp[1].test(message.content)) { //on parle au MDJ
         var a = message.content.split(' ');
         switch(a[0]) {
             case "!goto":
-console.log('La commande est entendu...');
                 if(message.member.roles.has('396366269684645890')) {
                     message.reply("Veuillez patientez quelques minute, 10 aprés votre dernier déplacement, avant de pouvoir bouger a nouveau.");
                 } else {
