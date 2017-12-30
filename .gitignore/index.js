@@ -130,7 +130,10 @@ newQuest();
 });
 
 lenolin.on('message', message => {
-    if(message.author.id===botID) setTimeout(function(){message.delete();}, 6e3);
+    if(message.author.id===botID) {
+    if(/!Q[0-9]+/.test(message.content) setTimeout(function(){if(noReply) message.delete();}, 3e5);
+    else setTimeout(function(){message.delete();}, 6e3);
+}
     
 var regexp = [/^<@([0-9]+)>,/, /^!/];
 
