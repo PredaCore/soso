@@ -63,7 +63,7 @@ var newQuest = function(){
     run();
 };
 
-var run = function() {};
+var run = function() {
     for ( var i = ifor; i < allQuests.length; i++ ) {
         if ( allQuests[i][0] == state ) { // Retrouver la quête en cours à partir de state.
             nowQuest = allQuests[i]; // une fois trouvée, mettre à jour la quete en cours.
@@ -71,6 +71,7 @@ var run = function() {};
             break; // puis sortir de la boucle immédiatement.
         }
     }
+};
 
 lenolin.on('ready', () => {
     bot.user.setGame("Orc");
