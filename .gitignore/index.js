@@ -33,6 +33,7 @@ Wicked.on('message', message => {
         var a = message.content.split(' ');
         switch(a[0]) {
             case "!goto":
+console.log('La commande est entendu...');
                 if(message.member.roles.has('396366269684645890')) {
                     message.reply("Veuillez patientez quelques minute, 10 aprés votre dernier déplacement, avant de pouvoir bouger a nouveau.");
                 } else {
