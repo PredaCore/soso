@@ -50,17 +50,17 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
         var a = message.content.split(' ');
             
             case "!choix01":
-    state += "1"; run();
-break;
-case "!choix02":
-    state += "2"; run();
-break;
-case "!choix03":
-    state += "3"; run();
-break;
-case "!choix04":
-    state += "4"; run();
-break;
+            state += "1"; run();
+        break;
+        case "!choix02":
+            state += "2"; run();
+        break;
+        case "!choix03":
+            state += "3"; run();
+        break;
+        case "!choix04":
+            state += "4"; run();
+        break;
             
         switch(a[0]) {
             case "!goto":
