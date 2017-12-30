@@ -57,8 +57,8 @@ var ifor = 0; // pour ne chercher qu'à partir du dernier arbre visité
 var nowQuest = ["0","Il était une fois","Choisir un personnage :",2,"Yann","Ebene"]; // utilisé pour lire la quête en cours.
 
 var newQuest = function(){
-	let min = 0, max = 0;
-	let curQuest = [(Math.floor(Math.random() * (max - min +1)) + min)];
+	var min = 0, max = 0;
+	var curQuest = [(Math.floor(Math.random() * (max - min +1)) + min)];
 	if(curQuest[0]<10) curQuest.push("0");
 	if(curQuest[0]<100) curQuest.push("0");
 	state = curQuest.reverse().join('');
