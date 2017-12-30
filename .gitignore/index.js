@@ -49,7 +49,7 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
     if(regexp[1].test(message.content)) { //on parle au MDJ
         var a = message.content.split(' ');
             
-            case "!choix01":
+        case "!choix01":
             state += "1"; run();
         break;
         case "!choix02":
