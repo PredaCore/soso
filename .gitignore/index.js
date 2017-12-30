@@ -54,6 +54,15 @@ var state = "000"; // numéro de l'arbre en cours de lecture
 var ifor = 0; // pour ne chercher qu'à partir du dernier arbre visité
 var nowQuest = ["0","Il était une fois","Choisir un personnage :",2,"Yann","Ebene"]; // utilisé pour lire la quête en cours.
 
+var newQuest = function(){
+    let min = 0, max = 0;
+    let curQuest = [(Math.floor(Math.random() * (max - min +1)) + min)];
+    if(curQuest[0]<10) curQuest.push("0");
+    if(curQuest[0]<100) curQuest.push("0");
+    state = curQuest.reverse().join('');
+    run();
+};
+
 var run = function() {};
     for ( var i = ifor; i < allQuests.length; i++ ) {
         if ( allQuests[i][0] == state ) { // Retrouver la quête en cours à partir de state.
@@ -66,6 +75,10 @@ var run = function() {};
 lenolin.on('ready', () => {
     bot.user.setGame("Orc");
     console.log("lenolin-bot: true...");
+        
+        setInterval(newQuest, 3,6e+6);
+newQuest();
+        
     lenolin.guilds.get('393792163835805706').members.map(a => {
         if(a.roles.has('396366269684645890')) a.removeRole('396366269684645890');
     });
