@@ -31,7 +31,7 @@ const rpg = {
     }
 };
 
-var allQuests = [];
+var allQuests = [
         ["0","```\nAlors que vous passez de longues heures accoudées au comptoir de la taverne de Marbrume a siroté une biere. Un barde monte sur une table et commence à jouer une petite chanson… Malheureusement sa chanson est terrible et nique l’ambiance du bar.```","Vous décidez de faire quelque chose !",2,"Le Convaincre de Partir","Le Provoquer en Duel"],
         // C'est le début de l'aventure, l'abre 0. Deux choix suivront cet arbre 0 : 01 et 02.
         
@@ -47,7 +47,7 @@ var allQuests = [];
         // C'est le choix numéro 2 suivant l'arbre 01, c'est à dire 012. Aucun choix n'est possible derrière cet arbre.
         ["013",".<br/>Vous avez ouvert la porte Rose. Un vortex vous ramène dans le couloir de gauche","Entrer dans le vortex ?",1,"Entrer."],
         // C'est le choix numéro 3 suivant l'arbre 01, c'est à dire 013. Un choix suivra l'arbre 013 : 0131.
-        
+        ];
 
 var myQuest = ""; // utilisé pour l'histoire complète à insérer.
 var state = "000"; // numéro de l'arbre en cours de lecture
