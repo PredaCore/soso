@@ -173,7 +173,7 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
                 }
             break;
         }
-        if(/^!/.test(message.content)) message.delete();
+        if(message.author.id!==botID&&/^!/.test(message.content)) message.delete();
     }
 });
 
