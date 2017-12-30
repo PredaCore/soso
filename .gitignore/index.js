@@ -25,7 +25,10 @@ const rpg = {
             } else return false;
         } else return false;
     },
-    addRoles: function(a,b) {Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[0]).catch(console.error);Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[1]).catch(console.error);}
+    addRoles: function(a,b) {
+        Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[0]).catch(console.error);
+        Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[1]).catch(console.error);
+    }
 };
 
 Wicked.on('ready', () => {
