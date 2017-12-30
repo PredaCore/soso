@@ -31,6 +31,8 @@ const rpg = {
     }
 };
 
+var run = function() {};
+
 lenolin.on('ready', () => {
     bot.user.setGame("Orc");
     console.log("lenolin-bot: true...");
