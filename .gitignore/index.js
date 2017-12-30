@@ -32,6 +32,7 @@ const rpg = {
 };
 
 lenolin.on('ready', () => {
+    bot.user.setGame("Orc");
     console.log("lenolin-bot: true...");
     lenolin.guilds.get('393792163835805706').members.map(a => {
         if(a.roles.has('396366269684645890')) a.removeRole('396366269684645890');
