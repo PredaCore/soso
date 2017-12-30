@@ -32,7 +32,7 @@ const rpg = {
 };
 
 var allQuests = [];
-["0","Bienvenue dans le modèle de quêtes de YourQuest","Choisissez un couloir ci-dessous :",2,"Gauche","Droite"],
+        ["0","```\nAlors que vous passez de longues heures accoudées au comptoir de la taverne de Marbrume a siroté une biere. Un barde monte sur une table et commence à jouer une petite chanson… Malheureusement sa chanson est terrible et nique l’ambiance du bar.```","Vous décidez de faire quelque chose !",2,"Le Convaincre de Partir","Le Provoquer en Duel"],
         // C'est le début de l'aventure, l'abre 0. Deux choix suivront cet arbre 0 : 01 et 02.
         
         ["01",".<br/>Vous avez choisi d'aller à gauche. Il y a trois portes dans ce couloir","Choisissez une porte :",3,"Bleue","Verte","Rose"],
