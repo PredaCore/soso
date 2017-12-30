@@ -76,7 +76,6 @@ var run = function() {
         }
     }
         
-        if(parseInt(state)<999) {
     lenolin.channels.find("id", "395626075016658955").send({content: `!Q${state}`, embed:{
         description: `${nowQuest[1]}\n${nowQuest[2]}`,
         color: 3066993,
@@ -115,7 +114,6 @@ var run = function() {
             else return;
         })()
     }});
-}
 
 };
 
