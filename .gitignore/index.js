@@ -49,6 +49,7 @@ var allQuests = [
         // C'est le choix numéro 3 suivant l'arbre 01, c'est à dire 013. Un choix suivra l'arbre 013 : 0131.
         ];
 
+var onQuest = false;
 var myQuest = ""; // utilisé pour l'histoire complète à insérer.
 var state = "000"; // numéro de l'arbre en cours de lecture
 var ifor = 0; // pour ne chercher qu'à partir du dernier arbre visité
