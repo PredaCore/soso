@@ -101,7 +101,7 @@ var run = function() {
 };
 
 lenolin.on('ready', () => {
-	bot.user.setGame("Orc");
+	lenolin.user.setGame("Orc");
 	console.log("lenolin-bot: true...");
 	setInterval(newQuest, 3,6e+6);
 	newQuest();
