@@ -12,7 +12,19 @@ const rpg = {
             '395932085858205698',    //Dras Léona - Ville
             '395932272768843776'    //Dras Léona - Alentour
     ],
-    goTo: function(a) {if(/"(.*?)"/.test(a)){var b = /"(.*?)"/.exec(a)[1].toLowerCase(),c = {"fort de marbrume": [0,1, '395934174839570432'],"foret du hadarac": [2,2,-1],"dras léona": [3,4, '395934283966971905']}, d = rpg.role;if(c.hasOwnProperty(b)) {return {v:d[c[b][0]], a:d[c[b][1]], c:c[b][2]};} else return false;} else return false;},
+        goTo: function(a) {
+        if(/"(.*?)"/.test(a)) {
+            var b = /"(.*?)"/.exec(a)[1].toLowerCase(),
+                c = {
+                    "fort de marbrume": [0,1, '395934174839570432'],
+                    "foret du hadarac": [2,2,-1],
+                    "dras léona": [3,4, '395934283966971905']
+                }, d = rpg.role;
+            if(c.hasOwnProperty(b)) {
+                return {v:d[c[b][0]], a:d[c[b][1]], c:c[b][2]};
+            } else return false;
+        } else return false;
+    },
     addRoles: function(a,b) {Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[0]).catch(console.error);Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[1]).catch(console.error);}
 };
 
