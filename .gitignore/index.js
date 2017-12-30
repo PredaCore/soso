@@ -49,6 +49,7 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
     if(regexp[1].test(message.content)) { //on parle au MDJ
         var a = message.content.split(' ');
             
+        switch(a[0]) {
         case "!choix01":
             state += "1"; run();
         break;
@@ -61,8 +62,7 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
         case "!choix04":
             state += "4"; run();
         break;
-            
-        switch(a[0]) {
+
             case "!goto":
                 if(message.member.roles.has('396366269684645890')) {
                     message.reply("Veuillez patientez quelques minute, 10 aprés votre dernier déplacement, avant de pouvoir bouger a nouveau.");
