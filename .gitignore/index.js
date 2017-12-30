@@ -113,7 +113,6 @@ var run = function() {
     }});
 }
 
-
 };
 
 lenolin.on('ready', () => {
