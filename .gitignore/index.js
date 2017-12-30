@@ -62,7 +62,8 @@ var newQuest = function(){
     if(curQuest[0]<10) curQuest.push("0");
     if(curQuest[0]<100) curQuest.push("0");
     state = curQuest.reverse().join('');
-        onQuest = true;
+    onQuest = true;
+var noReply = true;
     run();
 };
 
