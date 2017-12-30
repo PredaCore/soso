@@ -33,7 +33,9 @@ const rpg = {
 
 Wicked.on('ready', () => {
     console.log("Wicked-bot: true...");
-    Wicked.guilds.get('393792163835805706').members.map(a => {if(a.roles.has('396366269684645890')) a.removeRole('396366269684645890');});
+    Wicked.guilds.get('393792163835805706').members.map(a => {
+        if(a.roles.has('396366269684645890')) a.removeRole('396366269684645890');
+    });
 });
 
 Wicked.on('message', message => {
