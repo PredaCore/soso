@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
-const Wicked = new Discord.Client();
+const lenolin = new Discord.Client();
 
 const    token = "Mzk0NTQ4NjQ2MTI3MDc1MzI5.DSjuvw.vQp-f-U7fttYYT9EH2jEkf72Fy4",
-        botID = '394548646127075329'; //ID de Wicked.
+        botID = '394548646127075329'; //ID de lenolin.
 
 const rpg = {
     role: [
@@ -26,19 +26,19 @@ const rpg = {
         } else return false;
     },
     addRoles: function(a,b) {
-        Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[0]).catch(console.error);
-        Wicked.guilds.get('393792163835805706').members.get(a).addRole(b[1]).catch(console.error);
+        lenolin.guilds.get('393792163835805706').members.get(a).addRole(b[0]).catch(console.error);
+        lenolin.guilds.get('393792163835805706').members.get(a).addRole(b[1]).catch(console.error);
     }
 };
 
-Wicked.on('ready', () => {
-    console.log("Wicked-bot: true...");
-    Wicked.guilds.get('393792163835805706').members.map(a => {
+lenolin.on('ready', () => {
+    console.log("lenolin-bot: true...");
+    lenolin.guilds.get('393792163835805706').members.map(a => {
         if(a.roles.has('396366269684645890')) a.removeRole('396366269684645890');
     });
 });
 
-Wicked.on('message', message => {
+lenolin.on('message', message => {
     if(message.author.id===botID) setTimeout(function(){message.delete();}, 6e3);
     
 var regexp = [/^<@([0-9]+)>,/, /^!/];
@@ -72,4 +72,4 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
     }
 });
 
-Wicked.login(token);
+lenolin.login(token);
