@@ -97,6 +97,15 @@ var run = function() {
 					ret.push({name: nowQuest[5],value: "!choix02",inline: true});
 				case 1:
 					ret.push({name: nowQuest[4],value: "!choix01",inline: true});
+					
+					
+					
+		break;
+                default:
+                    onQuest = false;
+					
+				
+					
 			} return ret.reverse();
 		})(),
 		"thumbnail": {
