@@ -133,7 +133,7 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
             
         switch(a[0]) {
 		case "!choix01":
- 		   if(onQuest&&nowQuest3[]>0) {state += "1";noReply = false;run();}
+		    if(onQuest&&nowQuest[3]>0) {state += "1";noReply = false;run();}
 		break;
 		case "!choix02":
  		   if(onQuest&&nowQuest[3]>1) {state += "2";noReply = false;run();}
