@@ -60,6 +60,7 @@ var newQuest = function(){
 	state = curQuest.reverse().join('');
 	onQuest = true;
 	noReply = true;
+	ifor=0;
 	run();
 };
 
