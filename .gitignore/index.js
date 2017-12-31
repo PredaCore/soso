@@ -132,18 +132,18 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
         var a = message.content.split(' ');
             
         switch(a[0]) {
-			case "!choix01":
-				if(onQuest) {state += "1";noReply = false;run();}
-			break;
-			case "!choix02":
-				if(onQuest) {state += "2";noReply = false;run();}
-			break;
-			case "!choix03":
-				if(onQuest) {state += "3";noReply = false;run();}
-			break;
-			case "!choix04":
-				if(onQuest) {state += "4";noReply = false;run();}
-			break;
+		case "!choix01":
+ 		   if(onQuest&&nowQuest3[]>0) {state += "1";noReply = false;run();}
+		break;
+		case "!choix02":
+ 		   if(onQuest&&nowQuest[3]>1) {state += "2";noReply = false;run();}
+		break;
+		case "!choix03":
+  		  if(onQuest&&nowQuest[3]>2) {state += "3";noReply = false;run();}
+		break;
+		case "!choix04":
+ 		   if(onQuest&&nowQuest[3]>3) {state += "4";noReply = false;run();}
+		break;
 
             case "!goto":
                 if(message.member.roles.has('396366269684645890')) {
