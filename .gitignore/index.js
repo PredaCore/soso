@@ -32,23 +32,17 @@ const rpg = {
 };
 
 var allQuests = [
-	["000","```\nAlors que vous passez de longues heures accoudées au comptoir de la taverne de Marbrume a siroté une biere. Un barde monte sur une table et commence à jouer une petite chanson… Malheureusement sa chanson est terrible et nique l’ambiance du bar.```","Vous décidez de faire quelque chose !",2,"Le Convaincre de Partir","Le Provoquer en Duel"],
-	// C'est le début de l'aventure, l'abre 0. Deux choix suivront cet arbre 0 : 01 et 02.
+    ["000", "Bienvenue dans le modèle de quêtes, QUETQUET N°1 (non aucun jeu de mot)", "Choisissez un couloir ci-dessous : (pas d'veine c'était pas l'bon)", 2, "couloir01", "couloir02"],
+    ["0001", "Pas de bol, jean paul... Mais tu dira pas que je t'avais pas prévenue!", "", 0],
+    ["0002", "T'es mignon mais t'es con, regarde ça: https://goo.gl/NcrLNP", "", 0],
 
-	["0001",".<br/>Vous avez choisi d'aller à gauche. Il y a trois portes dans ce couloir","Choisissez une porte :",3,"Bleue","Verte","Rose"],
-	// C'est le choix numéro 1 suivant l'arbre 0, c'est à dire 01. Trois choix suivront l'arbre 01 : 011, 012 et 013.
-	["0002",".<br/>Vous avez choisi d'aller à droite. Il y a une porte dans ce couloir","Ouvrir la porte ?",1,"Ouvrir."],
-	// C'est le choix numéro 2 suivant l'arbre 0, c'est à dire 02. Un choix suivra l'arbre 02 : 021.
+    ["001", "Bienvenue dans le modèle de quêtes, ~~QUET~~QUET N°~~1~~ ..eeeuh 2.", "Choisissez un ~~couloir~~ chocolat ci-dessous :", 2, "couloir01", "couloir02"],
+    ["0011", "Bravo !! Vous êtes mort dans d'atroce soufrance!", "", 0],
+    ["0012", "Regarde ça: https://goo.gl/NcrLNP", "", 0],
 
-
-	["00011",".<br/>Vous avez ouvert la porte Bleue. Vous découvrez un paysage de pique-nique.","Que faites-vous ?",4,"Regarder les fourmis","Se servir à manger","Renifler le fromage","Retourner sur vos pas"],
-	// C'est le choix numéro 1 suivant l'arbre 01, c'est à dire 011. Quatre choix suivront l'arbre 011 : 0111, 0112, 0113 et 0114.
-	["00012",".<br/>Vous avez ouvert la porte Verte. Un vilain troll vous attendait derrière","Allez vous survivre ? C'est une autre histoire...",0],
-	// C'est le choix numéro 2 suivant l'arbre 01, c'est à dire 012. Aucun choix n'est possible derrière cet arbre.
-	["00013",".<br/>Vous avez ouvert la porte Rose. Un vortex vous ramène dans le couloir de gauche","Entrer dans le vortex ?",1,"Entrer."],
-	// C'est le choix numéro 3 suivant l'arbre 01, c'est à dire 013. Un choix suivra l'arbre 013 : 0131.
-	
-	["000131","","",5,"0001"],
+    ["002", "Bienvenue dans la quêtes, ~~MAOW~~Maow N°~~3~~ ..eeeuh oui 3.", "Choisissez un ~~couloir~~ vanille ci-dessous :", 2, "couloir01", "couloir02"],
+    ["0021", "Bravo !! Vous êtes mort dans d'atroce soufrance!", "", 0],
+    ["0022", "Regarde ça: https://goo.gl/NcrLNP", "", 0]
 ];
 
 var noReply = true;
@@ -59,7 +53,7 @@ var ifor = 0; // pour ne chercher qu'à partir du dernier arbre visité
 var nowQuest = ["0","Il était une fois","Choisir un personnage :",2,"Yann","Ebene"]; // utilisé pour lire la quête en cours.
 
 var newQuest = function(){
-	var min = 0, max = 0;
+	var min = 0, max = 2;
 	var curQuest = [(Math.floor(Math.random() * (max - min +1)) + min)];
 	if(curQuest[0]<10) curQuest.push("0");
 	if(curQuest[0]<100) curQuest.push("0");
@@ -109,7 +103,7 @@ var run = function() {
 			} return ret.reverse();
 		})(),
 		"thumbnail": {
-			"url": "https://cdn.discordapp.com/embed/avatars/0.png"
+			"url": "https://img15.hostingpics.net/pics/691096aqwzsxe.png"
         }
     };
     lenolin.channels.find("id", "395626075016658955").send({content: `!Q${state}`, embed: EmBeD});
