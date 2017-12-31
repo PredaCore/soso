@@ -75,7 +75,7 @@ var run = function() {
             break; // puis sortir de la boucle immédiatement.
         }
     }
-    let fields = (function(){
+    var fields = function(){
 		let ret = [];
 		switch(nowQuest[3]) {
 			case 4:
@@ -89,14 +89,14 @@ var run = function() {
 		}
 		if(ret.length>0) return {fields: [ret.reverse()]};
 		else return;
-	})();
+	};
     lenolin.channels.find("id", "395626075016658955").send({content: `!Q${state}`, embed:{
         description: `${nowQuest[1]}\n${nowQuest[2]}`,
         color: 3066993,
         thumbnail: {
             url: "https://cdn.discordapp.com/embed/avatars/0.png"
         },
-        fields
+        fields()
     }});
 };
 
