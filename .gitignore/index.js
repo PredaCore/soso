@@ -47,6 +47,8 @@ var allQuests = [
 	// C'est le choix numéro 2 suivant l'arbre 01, c'est à dire 012. Aucun choix n'est possible derrière cet arbre.
 	["00013",".<br/>Vous avez ouvert la porte Rose. Un vortex vous ramène dans le couloir de gauche","Entrer dans le vortex ?",1,"Entrer."],
 	// C'est le choix numéro 3 suivant l'arbre 01, c'est à dire 013. Un choix suivra l'arbre 013 : 0131.
+	
+	["000131","","",5,"0001"],
 ];
 
 var noReply = true;
@@ -75,29 +77,33 @@ var run = function() {
             break; // puis sortir de la boucle immédiatement.
         }
     }
-    var fields = function(){
-		let ret = [];
-		switch(nowQuest[3]) {
-			case 4:
-				ret.push({name: nowQuest[4],value: "!choix04",inline: true});
-			case 3:
-				ret.push({name: nowQuest[3],value: "!choix03",inline: true});
-			case 2:
-				ret.push({name: nowQuest[2],value: "!choix02",inline: true});
-			case 1:
-				ret.push({name: nowQuest[1],value: "!choix01",inline: true});
-		}
-		if(ret.length>0) return {fields: [ret.reverse()]};
-		else return;
-	};
-    lenolin.channels.find("id", "395626075016658955").send({content: `!Q${state}`, embed:{
-        description: `${nowQuest[1]}\n${nowQuest[2]}`,
-        color: 3066993,
-        thumbnail: {
-            url: "https://cdn.discordapp.com/embed/avatars/0.png"
-        },
-        fields()
-    }});
+	if(nowQuest[3]>4) {
+		ifor = 0;
+		state = nowQuest[4];
+		run();
+		return;
+	} 
+    var EmBeD = {
+		"description": `${nowQuest[1]}\n${nowQuest[2]}`,
+		"color": 3066993,
+		"fields": (function(){
+			let ret = [];
+			switch(nowQuest[3]) {
+				case 4:
+					ret.push({name: nowQuest[7],value: "!choix04",inline: true});
+				case 3:
+					ret.push({name: nowQuest[6],value: "!choix03",inline: true});
+				case 2:
+					ret.push({name: nowQuest[5],value: "!choix02",inline: true});
+				case 1:
+					ret.push({name: nowQuest[4],value: "!choix01",inline: true});
+			} return ret.reverse();
+		})(),
+		"thumbnail": {
+			"url": "https://cdn.discordapp.com/embed/avatars/0.png"
+        }
+    };
+    lenolin.channels.find("id", "395626075016658955").send({content: `!Q${state}`, embed: EmBeD});
 };
 
 lenolin.on('ready', () => {
@@ -111,10 +117,10 @@ lenolin.on('ready', () => {
 });
 
 lenolin.on('message', message => {
-    if(message.author.id===botID) {
-    if(/!Q[0-9]+/.test(message.content)) setTimeout(function(){if(noReply) message.delete();}, 3e5);
-    else setTimeout(function(){message.delete();}, 6e3);
-}
+    // if(message.author.id===botID) {
+    // if(/!Q[0-9]+/.test(message.content)) setTimeout(function(){if(noReply) message.delete();}, 3e5);
+    // else setTimeout(function(){message.delete();}, 6e3);
+// }
     
 var regexp = [/^<@([0-9]+)>,/, /^!/];
 
@@ -157,7 +163,7 @@ var regexp = [/^<@([0-9]+)>,/, /^!/];
                 }
             break;
         }
-        if(message.author.id!==botID&&/^!/.test(message.content)) message.delete();
+        // if(message.author.id!==botID&&/^!/.test(message.content)) message.delete();
     }
 });
 
