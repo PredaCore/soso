@@ -113,7 +113,7 @@ var run = function() {
 lenolin.on('ready', () => {
 	lenolin.user.setGame("Orc");
 	console.log("lenolin-bot: true...");
-	setInterval(newQuest, 3,6e+6);
+	setInterval(newQuest, 60*6e4);
 	newQuest();
     lenolin.guilds.get('393792163835805706').members.map(a => {
 		if(a.roles.has('396366269684645890')) a.removeRole('396366269684645890');
